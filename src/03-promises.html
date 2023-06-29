@@ -6,24 +6,60 @@
     <title>Promise generator</title>
     <link rel="stylesheet" href="css/common.css" />
   </head>
+
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+    }
+    .form {
+      display: flex;
+      flex-direction: column;
+      max-width: 200px;
+    }
+
+    .form input {
+      padding: 5px 0;
+      border-radius: 5px;
+      border: 1px solid black;
+      width: 100%; /* Установите ширину инпутов на 100% */
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form button {
+      padding: 5px 0;
+      border-radius: 5px;
+
+      cursor: pointer;
+      border: 1px solid black;
+      margin-top: 20px;
+      width: 100%; /* Установите ширину кнопки на 100% */
+    }
+
+    .form button:hover {
+      background-color: rgb(168, 168, 168);
+    }
+  </style>
   <body>
     <p><a href="index.html">Go back</a></p>
-
-    <form class="form">
-      <label>
-        First delay (ms)
-        <input type="number" name="delay" required />
-      </label>
-      <label>
-        Delay step (ms)
-        <input type="number" name="step" required />
-      </label>
-      <label>
-        Amount
-        <input type="number" name="amount" required />
-      </label>
-      <button type="submit">Create promises</button>
-    </form>
+    <div class="container">
+      <form class="form">
+        <label>
+          First delay (ms)
+          <input type="number" name="delay" required />
+        </label>
+        <label>
+          Delay step (ms)
+          <input type="number" name="step" required />
+        </label>
+        <label>
+          Amount
+          <input type="number" name="amount" required />
+        </label>
+        <button type="submit">Create promises</button>
+      </form>
+    </div>
 
     <script src="js/03-promises.js" type="module"></script>
   </body>
