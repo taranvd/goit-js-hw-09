@@ -3,6 +3,7 @@ import flatpickr from 'flatpickr';
 // Додатковий імпорт стилів
 import 'flatpickr/dist/flatpickr.min.css';
 import Notiflix from 'notiflix';
+import { Report } from 'notiflix/build/notiflix-report-aio';
 
 let intervalId = null;
 let selectedDate = null;
@@ -40,8 +41,6 @@ flatpickr(calendar, {
 });
 
 const timer = {
-  refsEl: document.querySelector('.timer'),
-
   start() {
     calendar.disabled = true;
     startButton.disabled = true;
@@ -53,8 +52,8 @@ const timer = {
 
       if (restTime <= 0) {
         timer.stop();
-
-        alert('time end!');
+        Report.info('Timer end!');
+        return;
       }
 
       const convertTime = convertMs(restTime);
@@ -102,3 +101,5 @@ function convertMs(ms) {
 function addLeadingZero(value) {
   return String(value).padStart(2, '0');
 }
+
+timer.stop();
